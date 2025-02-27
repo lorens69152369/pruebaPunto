@@ -14,7 +14,19 @@ print(frutas)
 2. ¿Que es un generador en python y en que casos es útil?
 Es un tipo de función que retorna un objeto iterador, en este tipo de funciones en vez de return se usa yield para generar una serie de resultados a lo largo del tiempo.
 Esto permite que la función genere valores y pause su ejecución después de cada rendimiento, manteniendo su estado entre iteraciones.
-puede ser util en el manejo de archivos grandes, puesto que los generadores 
+puede ser util en el manejo de archivos grandes, puesto que los generadores gestionan partes del archivo del archivo en un momento dado.
+Ejemplo:
+def generador():
+    n = 1
+    yield n
 
-proporcionan un método eficiente en cuanto al espacio para dicho procesamiento de datos, ya que solo se manejan partes del archivo en un momento dado. También podemos usar Iteradores para estos propósitos, pero Generator proporciona una forma rápida (no necesitamos escribir __next__ y __iter__ métodos aquí).
+    n += 1
+    yield n
 
+    n += 1
+    yield n
+
+for i in generador():
+    print(i)
+
+3. ¿que ventajas ofrece pandas sobre las estructuras de datos nativas de python para el analisis de datos?

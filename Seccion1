@@ -29,4 +29,28 @@ def generador():
 for i in generador():
     print(i)
 
-3. ¿que ventajas ofrece pandas sobre las estructuras de datos nativas de python para el analisis de datos?
+3. ¿Que ventajas ofrece pandas sobre las estructuras de datos nativas de python para el analisis de datos?
+- Panda nos brinda estructuras de datos como dataframe que se puede igualar a una tabla de base de datos, permitiendo asi manejar datos tabulares. 
+- Asi mismo, ofrece funciones de manipulación de datos para limpiar y preparar los conjuntos de datos.
+- permite indexar y alinear para trabajar con datos de diferentes fuentes.
+- Pandas se integra con otras bibliotecas como numpy, Matplotlib y sciPy
+- Mejora el rendimiento en comparación con los bucles tradicionales a traves de las operaciones vectorizados.
+
+4. ¿Cual es la diferencia entre apply() y map() y pandas
+apply funciona unicamente con objetos de tipo dataframe o series de pandas
+ejemplo:
+import pandas as pd
+df = pd.DataFrame({
+    'a':[1,2,3],
+    'b':[4,5,6]}
+    )
+
+df['suma']=df.apply(lambda row:row['a']+row['b'], axis=1)
+print(df)
+mientras que map() se usa para aplicar una función a cada elemento de una lista o series de pandas:
+import pandas as pd
+s = pd.Series([1,2,3,4])
+print(s)
+
+s_multi=s.map(lambda x:x*3)
+print(s_multi)

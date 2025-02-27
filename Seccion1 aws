@@ -1,0 +1,15 @@
+1. 
+Amazon s3 se usa para almacenar objetos, por ejemplo copias de seguridad, archivos grandes, se emplea para almacenar y recuperar cualquier cantidad de datos en la web, los datos se almacenan como objetos, mientras que
+Amazon RDS se utiliza para ejecutar base de datos relacionales, facilita la gestión de base de datos como oracle, sql server, mysql y amazon aurora, este servicio tiene la caracteristica de automatizar tareas de administración,
+ademas asegura integridad de las transacciones, tambien cuenta con herramientas de monitoreo y escabilidad y Amazon redshift: almacena datos en la nube y su uso principal es analizar datos a gran escala y realiza 
+consultas completas en datawarehouse, es ideal para generación de informes.
+
+2. Depende de lo que se requiera: si por ejemplo se tienen datos de aplicaciones web, juegos en linea, o cualquier aplicación en tiempo real donde los tiempos son necesarios para el usuario se usaria amazon dynamodb.
+
+3. El servicio de lambda s un servicio sin servidor, se activa mediante eventos, mientras que amazon ec2, si cuenta con maquinas virtuales en la cual se puede instalar y configurar cualquier aplicación, 
+y en este el usuario si tiene control sobre el sistema operativo.
+ 
+Ambos servicios tienen un costo diferente en aws lambda se paga por uso, es decir, por el tiempo de ejecución y la cantidad de solicitudes, mientras que en amazon ec2 se paga por el tiempo que las 
+las instancias esten en funcionamiento, incluso si no se estan procesando.
+
+en la duración de ejecución  en aws lambda cuenta con limitaciones de tiempo de ejecución , hoy por hoy,es hasta 15 inutos por invocación y em amazon EC2, Se puede ejecutar procesos indefinidamente.

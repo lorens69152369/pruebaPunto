@@ -1,0 +1,27 @@
+SQL
+1. Salario promedio:
+select  d.nombre, avg(salario) as [salario promedio]
+from empleados e
+inner join departamentos d on e.departamento_id=d.id
+group by departamento_id, d.nombre
+
+2. La diferencia radica en que el INNER JOIN trae o muestra unicamente aquellos registros que tienen campos identicos o comunes en 2 o mas tablas, 
+mientras en Left join trae los registros de la tabla izquierda aunque no tengan relación con la tabla de la derecha y tambien mostrará los registros que coincidan con la tabla de la derecha. 
+En el full join trae registros o filas de ambas tablas(Izquierda-Derecha) y en aquellos registros que no haya coincidencia mostrara el valor "null"
+
+- ejemplo de INNER JOIN :  Una tabla de clientes y pedidos se muestran aquellos clientes que hicieron algún pedido=    SELECT Clientes.Nombre_Cliente, Pedidos.PedidoID FROM Clientes
+INNER JOIN Pedidos ON Clientes.ClienteID=Pedidos.ClienteID  ORDER BY Clientes.Nombre_Cliente
+-ejemplo de left join: Una tabla donde se incluyan los clientes y los pedidos que se han realizado incluyendo "null"=SELECT Clientes.NombreCliente, Pedidos.PedidoID
+FROM Clientes LEFT JOIN Pedidos ON Clientes.ClienteID=Pedidos.ClienteID ORDER BY Clientes.NombreCliente;
+-ejemplo de full join: con esta instruccion se mostrarán todos los registros de clientes de las tablas clientes y pedidos mostrando "null" para aquellos que no tengan pedidos.
+=SELECT Clientes.NombreCliente, Pedidos.PedidoID FROM Clientes OUTER JOIN Pedidos ON Clientes.ClienteID=Pedidos.ClienteID ORDER BY Clientes.NombreCliente;
+
+3. optimizar consulta:
+- Se utilizarian indices para mejorar la velocidad de recuperación de registros.
+- evitar usar funciones en columnas indexadas en condiciones where
+- Particionar las tablas para poder mejorar la gestión y el rendimiento
+
+4. Having sql:
+se emplea para filtrar los resultados despues de usar una función de agregado como por ejemplo: avg, sum, count , con la diferencia que en el where se filtran los resultados antes del agrupamiento, having se aplica
+a los resultados de la consulta agregada.
+

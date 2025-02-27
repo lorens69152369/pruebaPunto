@@ -1,0 +1,39 @@
+- obtener los 5 clientes con mayor monto total de ventas en los ultimos 6 meses:
+select top 5 c.id, c.nombre, sum(v.monto) [total venta] 
+from clientes c
+JOIN ventas v
+ON c.id=v.clientes_id
+where v.fecha >= DATEADD(month, -6, GETDATE())
+group by c.id, c.nombre
+
+-Consulta para calcular el tiquet promedio de ventas por cliente en el ultimo año:
+select AVG(monto) promedio from ventas
+where fecha>=dateadd(year,-1,getdate())
+group by clientes_id
+
+-Obtener el nombre completo de los clientes y su monto total de ventas:
+SELECT CONCAT(c.nombre,'',c.apellido) as [nombre completo],
+sum(v.monto) as [total_ventas]
+from clientes c
+join ventas v on c.id=v.clientes_id
+group by c.id, c.nombre,c.apellido
+
+- obtener el ingreso promedio de ventas por mes
+
+select FORMAT(v.fecha,'yyyy-MM') AS mes, AVG(v.monto) as ingreso_promedio
+from ventas v
+where v.fecha>=DATEADD(YEAR,-1,GETDATE())
+group by FORMAT(v.fecha,'yyyy-MM')
+
+- Calcular el ranking de clientes por ventas en el ultimo año:
+
+select c.id, CONCAT(c.nombre,'',c.apellido) as nombre_completo,
+sum (v.monto) as [total_ventas],
+RANK() OVER (ORDER BY SUM(v.monto) desc) as ranking
+from clientes c
+join ventas v on c.id=v.clientes_id
+where v.fecha >=DATEADD(YEAR,-1,GETDATE())
+group by c.id, c.nombre, c.apellido
+
+
+

@@ -3,3 +3,18 @@ Seccion python
 La diferencia es que una lista puede tener valores duplicados, ademas sus valores son ordenados y se pueden cambiar y/o agregar valores, mientras que los conjuntos no puede tener valores duplicados, los valores deben 
 unicos, un conjunto es desordenado y los valores no se pueden cambiar.
 
+Ejemplo de un conjunto:
+prueba_set = {True, "pc", "celular", 7}
+print(prueba_set) 
+
+Ejemplo de una lista:
+frutas=["manzana","banana","fresa","kiwi"]
+print(frutas)
+
+2. ¿Que es un generador en python y en que casos es útil?
+Es un tipo de función que retorna un objeto iterador, en este tipo de funciones en vez de return se usa yield para generar una serie de resultados a lo largo del tiempo.
+Esto permite que la función genere valores y pause su ejecución después de cada rendimiento, manteniendo su estado entre iteraciones.
+puede ser util en el manejo de archivos grandes, puesto que los generadores 
+
+proporcionan un método eficiente en cuanto al espacio para dicho procesamiento de datos, ya que solo se manejan partes del archivo en un momento dado. También podemos usar Iteradores para estos propósitos, pero Generator proporciona una forma rápida (no necesitamos escribir __next__ y __iter__ métodos aquí).
+

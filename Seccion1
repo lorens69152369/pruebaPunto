@@ -1,0 +1,5 @@
+Seccion python
+1. ¿Cual es la diferencia entre una lista y un conjunto (set en python)?
+La diferencia es que una lista puede tener valores duplicados, ademas sus valores son ordenados y se pueden cambiar y/o agregar valores, mientras que los conjuntos no puede tener valores duplicados, los valores deben 
+unicos, un conjunto es desordenado y los valores no se pueden cambiar.
+
